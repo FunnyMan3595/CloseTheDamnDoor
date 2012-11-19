@@ -111,9 +111,9 @@ public class Timer
         this.elapsedTicks = (int)this.elapsedPartialTicks;
         this.elapsedPartialTicks -= (float)this.elapsedTicks;
 
-        if (this.elapsedTicks > 10)
+        if (this.elapsedTicks > 1)
         {
-            this.elapsedTicks = 10;
+            this.elapsedTicks = 1;
         }
 
         this.renderPartialTicks = this.elapsedPartialTicks;
