@@ -37,13 +37,13 @@ public class GuiDownloadTerrain extends GuiScreen
     {
         ++this.updateCounter;
 
-        if (this.updateCounter % 20 == 0)
-        {
-            this.netHandler.addToSendQueue(new Packet0KeepAlive());
-        }
-
         if (this.netHandler != null)
         {
+            if (this.updateCounter % 20 == 0)
+            {
+                this.netHandler.addToSendQueue(new Packet0KeepAlive());
+            }
+
             this.netHandler.processReadPackets();
         }
     }
